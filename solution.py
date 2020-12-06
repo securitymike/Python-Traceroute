@@ -162,4 +162,4 @@ def get_route(hostname):
         print(" ".join(tracelist1)) 
     return (tracelist1) 
 
-get_route("google.com") 
+#get_route("google.com") 
