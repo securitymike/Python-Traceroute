@@ -163,4 +163,4 @@ def get_route(hostname):
         print(" - ".join(tracelist1)) 
     return (tracelist2) 
 
-get_route("google.com") 
+#get_route("google.com") 
