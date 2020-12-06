@@ -126,8 +126,7 @@ def get_route(hostname):
 
                 if types == 11:
                     bytes = struct.calcsize("d")
-                    timeSent = struct.unpack("d", recvPacket[28:28 +
-                    bytes])[0]
+                    timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
                     tracelist1.insert(-1, str(int((timeReceived - t)*1000))+"ms ")
@@ -161,6 +160,6 @@ def get_route(hostname):
             finally:
                 mySocket.close()
         print(" ".join(tracelist1)) 
-    return (tracelist2) 
+    return (tracelist1) 
 
-#get_route("google.com") 
+get_route("google.com") 
