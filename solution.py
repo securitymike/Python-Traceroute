@@ -57,7 +57,7 @@ def build_packet():
     #  Don’t send the packet yet , just return the final packet in this function.
     #Fill in end
     # So the function ending should look like this
-    header = struct.pack ("bbHHh", ICMP_ECHO_REQUEST,0,myChecksum,ID,1)
+    header = struct.pack ("bbHHh", ICMP_ECHO_REQUEST,0,myChecksum,myID,1)
     packet = header + data
     return packet
  
@@ -119,7 +119,6 @@ def get_route(hostname):
                 if types == 11:
                     bytes = struct.calcsize("d")
                     #Fill in start
-                    #You should add your responses to your lists here
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     tracelist1.insert(-1, str(int((timeReceived - t)*1000))+"ms")
                     tracelist1.insert(-1, addr[0])
@@ -129,7 +128,6 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
-                    #You should add your responses to your lists here
                     tracelist1.insert(-1, str(int((timeReceived - t)*1000))+"ms")
                     tracelist1.insert(-1, addr[0])
                     tracelist2.append(tracelist1)
@@ -137,8 +135,7 @@ def get_route(hostname):
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    #Fill in start
-                    #You should add your responses to your lists here and return your list if your destination IP is met
+                    #Fillin start
                     tracelist1.insert(-1, str(int((timeReceived - t)*1000))+"ms")
                     tracelist1.insert(-1, addr[0])
                     tracelist2.append(tracelist1)   
@@ -146,7 +143,6 @@ def get_route(hostname):
                     #Fill in end
                 else:
                     #Fill in start
-                    #If there is an exception/error to your if statements, you should append that to your list here
                     print ('Error')
                     #Fill in end
                 break
