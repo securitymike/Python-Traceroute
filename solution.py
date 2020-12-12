@@ -57,7 +57,7 @@ def build_packet():
     #  Don’t send the packet yet , just return the final packet in this function.
     #Fill in end
     # So the function ending should look like this
-    header = struct.pack ("bbHHh", ICMP_ECHO_REQUEST,0,myChecksum,myID,1)
+    header = struct.pack ("bbHHh", ICMP_ECHO_REQUEST,0,myChecksum,ID,1)
     packet = header + data
     return packet
  
